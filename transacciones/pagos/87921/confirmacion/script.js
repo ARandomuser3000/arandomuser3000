@@ -1,16 +1,22 @@
 function enviarMensajeDiscord(mensaje) {
-    var webhookURL = 'https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i'; // Reemplaza con la URL de tu webhook de Discord
+    // URL del webhook de Discord
+    var webhookUrl = "https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i";
 
-    axios.post(webhookURL, { content: mensaje })
-      .then(function (response) {
-        console.log('Mensaje enviado a Discord:', response.data);
-      })
-      .catch(function (error) {
-        console.error('Error al enviar el mensaje a Discord:', error);
-      });
-  }
+    // Objeto de datos para enviar al webhook
+    var data = {
+        content: mensaje
+    };
 
-  function aceptar() {
+    // Configuración de la solicitud HTTP
+    var request = new XMLHttpRequest();
+    request.open("POST", webhookUrl, true);
+    request.setRequestHeader("Content-type", "application/json");
+
+    // Envío de la solicitud
+    request.send(JSON.stringify(data));
+}
+
+function aceptar() {
     var button = document.getElementById('accept-button');
     button.disabled = true;
 
@@ -31,30 +37,32 @@ function enviarMensajeDiscord(mensaje) {
 
     var dotCount = 0;
     var intervalId = setInterval(function () {
-      dotCount++;
-      var dots = "";
-      for (var i = 0; i < dotCount; i++) {
-        dots += ".";
-      }
-      confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado" + dots;
-      if (dotCount === 3) {
-        dotCount = 0;
-      }
-    }, 500);
+        dotCount++;
+        var dots = "";
+        for (var i = 0; i < dotCount; i++) {
+            dots += ".";
+        }
+        confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado" + dots;
+        if (dotCount === 3) {
+            dotCount = 0;
+        }
+    }, 300);
 
     setTimeout(function () {
-      clearInterval(intervalId);
-      icon.src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
-      confirmationText.innerText = "Completado";
-      iconContainer.classList.remove('loader-spin');
-      price.style.display = "block";
-      price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
-      var mensaje = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
-      enviarMensajeDiscord(mensaje);
-    }, 10000);
-  }
+        clearInterval(intervalId);
+        icon.src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
+        confirmationText.innerText = "Completado";
+        iconContainer.classList.remove('loader-spin');
+        price.style.display = "block";
+        price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
 
-  function cancelar() {
+        // Envío del mensaje a Discord
+        var mensajeDiscord = "Se ha aceptado un pago.";
+        enviarMensajeDiscord(mensajeDiscord);
+    }, 15000);
+}
+
+function cancelar() {
     var button = document.getElementById('accept-button');
     button.disabled = true;
 
@@ -75,25 +83,27 @@ function enviarMensajeDiscord(mensaje) {
 
     var dotCount = 0;
     var intervalId = setInterval(function () {
-      dotCount++;
-      var dots = "";
-      for (var i = 0; i < dotCount; i++) {
-        dots += ".";
-      }
-      confirmationText.innerText = "¡Espere! Su pago está siendo cancelado" + dots;
-      if (dotCount === 3) {
-        dotCount = 0;
-      }
-    }, 500);
+        dotCount++;
+        var dots = "";
+        for (var i = 0; i < dotCount; i++) {
+            dots += ".";
+        }
+        confirmationText.innerText = "¡Espere! Su pago está siendo cancelado" + dots;
+        if (dotCount === 3) {
+            dotCount = 0;
+        }
+    }, 300);
 
     setTimeout(function () {
-      clearInterval(intervalId);
-      icon.src = "https://www.freeiconspng.com/thumbs/error-icon/error-icon-4.png";
-      confirmationText.innerText = "Cancelado";
-      iconContainer.classList.remove('loader-spin');
-      price.style.display = "block";
-      price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
-      var mensaje = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
-      enviarMensajeDiscord(mensaje);
+        clearInterval(intervalId);
+        icon.src = "https://www.freeiconspng.com/thumbs/error-icon/error-icon-4.png";
+        confirmationText.innerText = "Cancelado";
+        iconContainer.classList.remove('loader-spin');
+        price.style.display = "block";
+        price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
+
+        // Envío del mensaje a Discord
+        var mensajeDiscord = "Se ha cancelado un pago.";
+        enviarMensajeDiscord(mensajeDiscord);
     }, 4000);
-  }
+}
