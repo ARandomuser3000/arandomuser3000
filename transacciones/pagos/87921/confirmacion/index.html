@@ -6,13 +6,13 @@
 </head>
 <body>
     <div class="centered-content">
-        <div id="icon-container">
-            <img id="icon" src="https://static.vecteezy.com/system/resources/previews/012/042/292/original/warning-sign-icon-transparent-background-free-png.png" alt="icon">
+        <div id="icon-container" class="">
+            <img id="icon" src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png" alt="icon">
         </div>
-        <h2 id="confirmation-text">¿Deseas confirmar el pago con Id: (#87921)?</h2>
-        <p id="price" class="price">Precio: $0.00</p>
-        <div id="button-container" class="button-container">
-            <button id="accept-button" class="accept-button" onclick="aceptar()">
+        <h2 id="confirmation-text">Completado</h2>
+        <p id="price" class="price" style="display: block;">¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.<br>No olvides tomar una captura de pantalla y enviársela a tu proveedor.<br>ID de pago: (#87921)</p>
+        <div id="button-container" class="button-container" style="display: none;">
+            <button id="accept-button" class="accept-button" onclick="aceptar()" disabled="">
                 Aceptar
             </button>
             <button class="cancel-button" onclick="cancelar()">
@@ -28,5 +28,7 @@
     </div>
 
     <script src="script.js"></script>
+
+
 </body>
 </html>
