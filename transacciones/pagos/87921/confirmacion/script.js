@@ -20,21 +20,6 @@ function enviarMensajeDiscord(mensaje) {
  var button = document.getElementById('accept-button');
     button.disabled = true;
 
-    var iconContainer = document.getElementById('icon-container');
-    var icon = document.getElementById('icon');
-    icon.src = "https://icons.veryicon.com/png/o/miscellaneous/selling-wine-net/loading-42.png";
-
-    iconContainer.classList.add('loader-spin');
-
-    var confirmationText = document.getElementById('confirmation-text');
-    confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado.";
-
-    var price = document.getElementById('price');
-    price.style.display = "none";
-
-    var buttonContainer = document.getElementById('button-container');
-    buttonContainer.style.display = "none";
-
 
 if (numero === 1) {
   icon.src = "https://static.vecteezy.com/system/resources/previews/001/208/666/original/banana-png.png";
