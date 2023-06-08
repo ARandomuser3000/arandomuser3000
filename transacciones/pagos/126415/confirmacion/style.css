@@ -1,7 +1,9 @@
 body {
     background-image: linear-gradient(to bottom right, #270091, #6a009b);
 }
-
+#error {
+    color: red;
+}
 .centered-content {
     display: flex;
     flex-direction: column;
