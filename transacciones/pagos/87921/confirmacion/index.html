@@ -1,12 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Timeout</title>
+    <title>Confirmar pago</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="centered-content">
-        <h2 id="confirmation-text">Se ha cancelado el pedido por falta de respuesta. <br> Ponte en contacto con tu proveedor para volver a reactivarlo.</h2>
+        <div id="icon-container">
+            <img id="icon" src="https://static.vecteezy.com/system/resources/previews/012/042/292/original/warning-sign-icon-transparent-background-free-png.png" alt="icon">
+        </div>
+        <h2 id="confirmation-text">¿Deseas confirmar el pago con Id: (#87921)?</h2>
+        <p id="price" class="price">Precio: $0.00</p>
+        <div id="button-container" class="button-container">
+            <button id="accept-button" class="accept-button" onclick="aceptar()">
+                Aceptar
+            </button>
+            <button class="cancel-button" onclick="cancelar()">
+                Cancelar
+            </button>
+        </div>
         <div id="loader-container" class="loader-container">
             <img id="loader" src="loading.png" alt="Cargando">
         </div>
