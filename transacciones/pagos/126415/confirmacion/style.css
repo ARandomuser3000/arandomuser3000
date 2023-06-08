@@ -61,8 +61,8 @@ button {
 
 .accept-button {
     color: white;
-    background-color: green;
-    border-color: darkgreen;
+    background-color: gray;
+    border-color: darkgray;
 }
 
 .cancel-button {
