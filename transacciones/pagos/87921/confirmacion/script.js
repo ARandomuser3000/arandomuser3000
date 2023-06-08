@@ -41,7 +41,7 @@ if (numero === 1) {
   price.innerText = "[404] Página no encontrada o inexistente. \n Esta página no fue encontrada, por favor, vuelve a pedir el URL o intenta con otro pedido. \n Cuentas con el platano de la empatía."
 } else if (numero === 2) {
   icon.src = "https://static.vecteezy.com/system/resources/previews/017/172/383/original/warning-message-concept-represented-by-exclamation-mark-icon-exclamation-symbol-in-circle-png.png";
-  price.innerText = "[404] Página no encontrada o inexistente. \n Esta página no fue encontrada, por favor, vuelve a pedir el URL o intenta con otro pedido. \n Cuentas con el platano de la empatía."
+  price.innerText = "[404] Página no encontrada o inexistente. \n Esta página no fue encontrada, por favor, vuelve a pedir el URL o intenta con otro pedido."
 }
 
 function aceptar() {
