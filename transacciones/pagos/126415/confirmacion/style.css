@@ -1,11 +1,6 @@
 body {
     background-image: linear-gradient(to bottom right, #270091, #6a009b);
 }
-#error {
-    font-family: 'Arial', sans-serif;
-    font-size: 20px;
-    color: red;
-}
 .centered-content {
     display: flex;
     flex-direction: column;
@@ -73,6 +68,12 @@ button {
     color: white;
     background-color: red;
     border-color: darkred;
+}
+
+#error {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: red;
 }
 
 .loader-container {
