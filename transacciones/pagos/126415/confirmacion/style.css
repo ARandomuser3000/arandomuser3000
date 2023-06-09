@@ -61,14 +61,14 @@ button {
 
 .accept-button {
     color: white;
-    background-color: #5b5a5afa;
-    border-color: #414141;
+    background-color: green;
+    border-color: darkgreen;
 }
 
 .cancel-button {
     color: white;
-    background-color: #5b5a5afa;
-    border-color: #414141;
+    background-color: red;
+    border-color: darkred;
 }
 
 #error {
