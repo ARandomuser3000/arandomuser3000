@@ -1,0 +1,130 @@
+body {
+    background-image: linear-gradient(to bottom right, #270091, #6a009b);
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#warning-container {
+    display: none;
+}
+
+.warning-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+#icon {
+    width: 150px;
+    height: 150px;
+}
+
+#loader {
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+#completed-image {
+    width: 150px;
+    height: 150px;
+}
+
+h2,
+.price {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.accept-button {
+    color: white;
+    background-color: #5b5a5afa;
+    border-color: #414141;
+}
+
+.cancel-button {
+    color: white;
+    background-color: red;
+    border-color: darkred;
+}
+
+#error {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: #ff896e;
+}
+
+.loader-container {
+    margin-top: 20px;
+    display: none;
+}
+
+.completed-container {
+    margin-top: 20px;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.upload-button {
+    color: white;
+    background-color: green;
+    border-color: darkgreen;
+}
+
+.file-upload-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.file-upload-success {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: green;
+    display: none;
+}
