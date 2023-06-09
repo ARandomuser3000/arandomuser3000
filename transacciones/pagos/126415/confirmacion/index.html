@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Confirmar pago</title>
@@ -13,19 +13,29 @@
         <h2 id="confirmation-text">¿Deseas confirmar el pago con Id: (#126415)?</h2>
         <p id="price" class="price">Precio: $2.14</p>
         <div id="button-container" class="button-container">
-            <button id="accept-button" class="accept-button" disabled="">
+            <button id="accept-button" class="accept-button" disabled>
                 Aceptar
             </button>
             <button class="cancel-button" onclick="cancelar()">
                 Cancelar
             </button>
         </div>
-        <p id="error" class="error">Una vez firmes la factura podras continuar con el proceso</p>
+        <p id="error" class="error">Una vez subas la factura podrás continuar con el proceso</p>
         <div id="loader-container" class="loader-container">
             <img id="loader" src="loading.png" alt="Cargando">
         </div>
         <div id="completed-container" class="completed-container">
             <img id="completed-image" src="check.png" alt="Completado">
+        </div>
+
+        <div id="file-upload-container" class="file-upload-container">
+            <input type="file" id="file-input" onchange="handleFileChange()">
+            <br>
+            <button id="upload-button" class="upload-button" disabled onclick="handleFileUpload()">
+                Subir archivo
+            </button>
+            <p id="file-upload-success" class="file-upload-success">Se ha subido el archivo correctamente y lo estamos examinando</p>
+            <p id="file-upload-error" class="file-upload-success">Hubo un problema al enviar el archivo, recarga la página e intentelo nuevamente</p>
         </div>
     </div>
 
