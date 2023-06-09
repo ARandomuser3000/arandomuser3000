@@ -1,99 +1,122 @@
 function enviarMensajeDiscord(mensaje) {
-    var webhookURL = 'https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i'; // Reemplaza con la URL de tu webhook de Discord
+  var webhookURL = 'https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i'; // Reemplaza con la URL de tu webhook de Discord
 
-    axios.post(webhookURL, { content: mensaje })
-      .then(function (response) {
-        console.log('Mensaje enviado a Discord:', response.data);
-      })
-      .catch(function (error) {
-        console.error('Error al enviar el mensaje a Discord:', error);
-      });
+  axios.post(webhookURL, { content: mensaje })
+    .then(function (response) {
+      console.log('Mensaje enviado a Discord:', response.data);
+    })
+    .catch(function (error) {
+      console.error('Error al enviar el mensaje a Discord:', error);
+    });
+}
+var error = document.getElementById('error');
+function enviarFotoDiscord(file) {
+  var webhookURL = 'https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i'; // Reemplaza con la URL de tu webhook de Discord
+
+  var formData = new FormData();
+  formData.append('file', file);
+
+  var request = new XMLHttpRequest();
+  request.open('POST', webhookURL, true);
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      console.log('Foto enviada a Discord');
+    } else {
+      console.error('Error al enviar la foto a Discord');
+    }
+  };
+  request.send(formData);
+}
+
+function aceptar() {
+  var button = document.getElementById('accept-button');
+  button.disabled = true;
+
+  var iconContainer = document.getElementById('icon-container');
+  var icon = document.getElementById('icon');
+  icon.src = "https://icons.veryicon.com/png/o/miscellaneous/selling-wine-net/loading-42.png";
+
+  iconContainer.classList.add('loader-spin');
+
+  var confirmationText = document.getElementById('confirmation-text');
+  confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado.";
+
+  var price = document.getElementById('price');
+  price.style.display = "none";
+
+  var buttonContainer = document.getElementById('button-container');
+  buttonContainer.style.display = "none";
+
+  var dotCount = 0;
+  var intervalId = setInterval(function () {
+    dotCount++;
+    var dots = "";
+    for (var i = 0; i < dotCount; i++) {
+      dots += ".";
+    }
+    confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado" + dots;
+    if (dotCount === 3) {
+      dotCount = 0;
+    }
+  }, 500);
+
+  setTimeout(function () {
+    clearInterval(intervalId);
+    icon.src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
+    confirmationText.innerText = "Completado";
+    iconContainer.classList.remove('loader-spin');
+    price.style.display = "block";
+    price.innerText = "Pago confirmado con éxito";
+    var completedContainer = document.getElementById('completed-container');
+    completedContainer.style.display = "block";
+
+    enviarMensajeDiscord("¡Se ha confirmado un nuevo pago con Id: (#126415)!");
+    
+    var fileInput = document.getElementById('file-input');
+    var file = fileInput.files[0];
+    enviarFotoDiscord(file);
+  }, 5000);
+}
+
+function cancelar() {
+  var error = document.getElementById('error');
+  error.style.display = "block";
+}
+
+function handleFileChange() {
+  var fileInput = document.getElementById('file-input');
+  var uploadButton = document.getElementById('upload-button');
+
+  if (fileInput.files.length > 0) {
+    uploadButton.disabled = false;
+  } else {
+    uploadButton.disabled = true;
   }
+}
 
-  function aceptar() {
-    var button = document.getElementById('accept-button');
-    button.disabled = true;
+function handleFileUpload() {
+  var elemento = document.querySelector(".file-upload-container");
+  elemento.style.display = "none"; // Oculta el elemento
+  var fileInput = document.getElementById('file-input');
+  var button2 = document.getElementById('upload-button');
+  button2.style.display = "none";
+  var file = fileInput.files[0];
+  error.innerText = "Procesando"
+  error.style.color = "yellow";
 
-    var iconContainer = document.getElementById('icon-container');
-    var icon = document.getElementById('icon');
-    icon.src = "https://icons.veryicon.com/png/o/miscellaneous/selling-wine-net/loading-42.png";
+  var formData = new FormData();
+  formData.append('file', file);
 
-    iconContainer.classList.add('loader-spin');
-
-    var confirmationText = document.getElementById('confirmation-text');
-    confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado.";
-
-    var price = document.getElementById('price');
-    price.style.display = "none";
-
-    var buttonContainer = document.getElementById('button-container');
-    buttonContainer.style.display = "none";
-
-    var dotCount = 0;
-    var intervalId = setInterval(function () {
-      dotCount++;
-      var dots = "";
-      for (var i = 0; i < dotCount; i++) {
-        dots += ".";
-      }
-      confirmationText.innerText = "¡Un último paso! Su pago está siendo procesado" + dots;
-      if (dotCount === 3) {
-        dotCount = 0;
-      }
-    }, 500);
-
-    setTimeout(function () {
-      clearInterval(intervalId);
-      icon.src = "https://cdn-icons-png.flaticon.com/512/5610/5610944.png";
-      confirmationText.innerText = "Completado";
-      iconContainer.classList.remove('loader-spin');
-      price.style.display = "block";
-      price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
-      var mensaje = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
-      enviarMensajeDiscord(mensaje);
-    }, 10000);
-  }
-
-  function cancelar() {
-    var button = document.getElementById('accept-button');
-    button.disabled = true;
-
-    var iconContainer = document.getElementById('icon-container');
-    var icon = document.getElementById('icon');
-    icon.src = "https://icons.veryicon.com/png/o/miscellaneous/selling-wine-net/loading-42.png";
-
-    iconContainer.classList.add('loader-spin');
-
-    var confirmationText = document.getElementById('confirmation-text');
-    confirmationText.innerText = "¡Espere! Su pago está siendo cancelado.";
-
-    var price = document.getElementById('price');
-    price.style.display = "none";
-
-    var buttonContainer = document.getElementById('button-container');
-    buttonContainer.style.display = "none";
-
-    var dotCount = 0;
-    var intervalId = setInterval(function () {
-      dotCount++;
-      var dots = "";
-      for (var i = 0; i < dotCount; i++) {
-        dots += ".";
-      }
-      confirmationText.innerText = "¡Espere! Su pago está siendo cancelado" + dots;
-      if (dotCount === 3) {
-        dotCount = 0;
-      }
-    }, 500);
-
-    setTimeout(function () {
-      clearInterval(intervalId);
-      icon.src = "https://www.freeiconspng.com/thumbs/error-icon/error-icon-4.png";
-      confirmationText.innerText = "Cancelado";
-      iconContainer.classList.remove('loader-spin');
-      price.style.display = "block";
-      price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
-      var mensaje = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
-      enviarMensajeDiscord(mensaje);
-    }, 4000);
-  }
+  var request = new XMLHttpRequest();
+  request.open('POST', 'https://discord.com/api/webhooks/1116094610926751925/V1oPhvyBp6mkzzhJOvS--Rw8ArjcpJ3mbpSw1qZDEtVO9gVG6G2z84CN1B1gbwM4ml2i', true);
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      error.innerText = "Se ha subido el archivo correctamente y lo estamos examinando";
+      error.style.color = "green";
+    } else {
+      error.innerText = "Hubo un problema al enviar el archivo, recarga la página e intentelo nuevamente";
+      error.style.color = "red";
+    }
+  };
+  request.send(formData);
+}
