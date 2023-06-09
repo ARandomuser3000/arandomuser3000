@@ -71,12 +71,6 @@ button {
     border-color: darkred;
 }
 
-#error {
-    font-family: 'Arial', sans-serif;
-    font-size: 20px;
-    color: #ff896e;
-}
-
 .loader-container {
     margin-top: 20px;
     display: none;
@@ -107,24 +101,4 @@ button {
     100% {
         transform: rotate(360deg);
     }
-}
-
-.upload-button {
-    color: white;
-    background-color: green;
-    border-color: darkgreen;
-}
-
-.file-upload-label {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.file-upload-success {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    color: green;
-    display: none;
 }
