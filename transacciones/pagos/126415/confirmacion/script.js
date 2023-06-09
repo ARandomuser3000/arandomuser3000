@@ -48,8 +48,8 @@ function enviarMensajeDiscord(mensaje) {
       confirmationText.innerText = "Completado";
       iconContainer.classList.remove('loader-spin');
       price.style.display = "block";
-      price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#126415)";
-      var mensaje = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#126415)";
+      price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#126415)\n\nPor favor. Espera alrededor de 5 a 90 minutos para que se complete tu compra.";
+      var mensaje = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#126415)\n\nPor favor. Espera alrededor de 5 a 90 minutos para que se complete tu compra.";
       enviarMensajeDiscord(mensaje);
     }, 10000);
   }
