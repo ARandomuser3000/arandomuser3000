@@ -48,8 +48,8 @@ function enviarMensajeDiscord(mensaje) {
       confirmationText.innerText = "Completado";
       iconContainer.classList.remove('loader-spin');
       price.style.display = "block";
-      price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
-      var mensaje = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#87921)";
+      price.innerText = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#126415)";
+      var mensaje = "¡Listo! Se ha completado tu compra y ya puedes disfrutar de los beneficios.\nNo olvides tomar una captura de pantalla y enviársela a tu proveedor.\nID de pago: (#126415)";
       enviarMensajeDiscord(mensaje);
     }, 10000);
   }
@@ -92,8 +92,8 @@ function enviarMensajeDiscord(mensaje) {
       confirmationText.innerText = "Cancelado";
       iconContainer.classList.remove('loader-spin');
       price.style.display = "block";
-      price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
-      var mensaje = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#87921)";
+      price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#126415)";
+      var mensaje = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#126415)";
       enviarMensajeDiscord(mensaje);
     }, 4000);
   }
