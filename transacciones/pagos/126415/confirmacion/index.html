@@ -3,17 +3,16 @@
 <head>
     <title>Confirmar pago</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4305/4305611.png" type="image/x-icon">
 </head>
 <body>
     <div class="centered-content">
         <div id="icon-container">
             <img id="icon" src="https://static.vecteezy.com/system/resources/previews/012/042/292/original/warning-sign-icon-transparent-background-free-png.png" alt="icon">
         </div>
-        <h2 id="confirmation-text">¿Deseas confirmar el pago con Id: (#126415)?</h2>
-        <p id="price" class="price">Precio: $2.14</p>
+        <h2 id="confirmation-text">¿Deseas confirmar el pago con Id: (#87921)?</h2>
+        <p id="price" class="price">Precio: $0.00</p>
         <div id="button-container" class="button-container">
-            <button id="accept-button" class="accept-button">
+            <button id="accept-button" class="accept-button" onclick="aceptar()">
                 Aceptar
             </button>
             <button class="cancel-button" onclick="cancelar()">
@@ -25,16 +24,6 @@
         </div>
         <div id="completed-container" class="completed-container">
             <img id="completed-image" src="check.png" alt="Completado">
-        </div>
-
-        <div id="file-upload-container" class="file-upload-container" style="display: none;">
-            <input type="file" id="file-input" onchange="handleFileChange()">
-            <br>
-            <button id="upload-button" class="upload-button" onclick="handleFileUpload()" style="display: none;">
-                Subir archivo
-            </button>
-            <p id="file-upload-success" class="file-upload-success">Se ha subido el archivo correctamente y lo estamos examinando</p>
-            <p id="file-upload-error" class="file-upload-success">Hubo un problema al enviar el archivo, recarga la página e intentelo nuevamente</p>
         </div>
     </div>
 
