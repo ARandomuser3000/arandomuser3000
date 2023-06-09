@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to bottom right, #270091, #6a009b);
 }
+
 .centered-content {
     display: flex;
     flex-direction: column;
@@ -106,4 +107,24 @@ button {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.upload-button {
+    color: white;
+    background-color: green;
+    border-color: darkgreen;
+}
+
+.file-upload-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.file-upload-success {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: green;
+    display: none;
 }
