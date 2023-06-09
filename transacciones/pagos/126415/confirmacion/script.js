@@ -95,5 +95,5 @@ function enviarMensajeDiscord(mensaje) {
       price.innerText = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#126415)";
       var mensaje = "¡Listo! Se ha cancelado el pago, no es necesario hacer nada más.\nID de pago: (#126415)";
       enviarMensajeDiscord(mensaje);
-    }, 2500000);
+    }, 8000000);
   }
