@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crear nuevo ticket de soporte</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Crear nuevo ticket de soporte</h1>
+
+  <form id="ticketForm" action="enviar_ticket.php" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="asunto" name="asunto" required>
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+
+    <input type="submit" value="Enviar ticket">
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
