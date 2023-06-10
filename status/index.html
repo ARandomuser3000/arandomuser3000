@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="30">
+	<title>Estado de Servicios</title>
+	<style>
+		body {
+			font-family: "Source Sans Pro", Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 32px;
+			margin-bottom: 16px;
+		}
+		.status-message p:first-child {
+	color: rgb(136, 136, 136);
+}
+		.status.no-border {
+			border: none;
+		}
+		.status-message {
+			border: 1px solid rgb(100, 100, 100);
+			border-radius: 8px;
+			margin: 16px auto;
+			max-width: 800px;
+			display: flex;
+			align-items: center;
+			padding: 16px;
+			box-sizing: border-box;
+		}
+		.status-message h2 {
+			margin: 0;
+		}
+		.status-message p {
+			margin: 0;
+		}
+		.status-message p:last-child {
+			margin-left: auto;
+			text-align: right;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin: 16px auto;
+			max-width: 800px;
+			border-radius: 8px;
+			overflow: hidden;
+		}
+		th, td {
+			padding: 16px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+		}
+		.status {
+			background-color: #27AE60;
+			color: white;
+			padding: 8px 16px;
+			border-radius: 8px;
+			margin: 16px auto;
+			max-width: 800px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.success {
+			color: #27AE60;
+		}
+		.warning {
+			color: #FFA837;
+		}
+		.monitoring {
+			color: #8400ff;
+		}
+		.error {
+			color: #C44031;
+		}
+		.center {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Estado de Servicios</h1>
+	<div class="status no-border">
+		<p>Todos los servicios funcionando</p> <!-- Todos los servicios funcionando. -->
+		<p>Actualizado recientemente</p> <!-- Hace pocos segundos. -->
+	</div>
+	<div class="status-message">
+		<p>09 Jun. 2023 20:01:14 PM</p> <!-- Hace pocos segundos. -->
+		<p style="text-align: right;"><strong>[Problema]</strong> Se ha encontrado un error en las API generales.</p> <!-- [Información] Todo se encuentra sin problemas.. -->
+	</div>
+	<div class="status-message">
+		<p>10 Jun. 2023 00:53:25 AM</p> <!-- Hace pocos segundos. -->
+		<p style="text-align: right;"><strong>[Moritoreando]</strong> Se ha encontrado la causa raíz y se está solucionando. Los pagos aún no han sido procesados</p> <!-- [Información] Todo se encuentra sin problemas.. -->
+	</div>
+	<div class="status-message">
+		<p>10 Jun. 2023 10:54:36 AM</p> <!-- Hace pocos segundos. -->
+		<p style="text-align: right;"><strong>[Resuelto]</strong> Los servidores funcionan normalmente.</p> <!-- [Información] Todo se encuentra sin problemas.. -->
+	</div>
+	<table>
+		<tr>
+			<th>Servicio</th>
+			<th>Estado</th>
+			<th>Detalles</th>
+		</tr>
+		<tr>
+			<td>Sitio Web</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td> <!-- Todos los sistemas están funcionando correctamente. -->
+		</tr>
+		<tr>
+			<td>Base de datos</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td> <!-- Todos los sistemas están funcionando correctamente. -->
+		</tr>
+		<tr>
+			<td>Servicios Externos</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>Comunicacion con los servidores</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>Documentacion</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>Sitios interconectados</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>Redes</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>Conexiones</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>Almacenamiento</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+		<tr>
+			<td>API</td>
+			<td class="success">Operando</td> <!-- Operando. Parcialmente suspendido. Error Crítico -->
+			<td>Todos los sistemas están funcionando correctamente</td>
+		</tr>
+	</table>
+	<p class="center">Si tienes algún problema, por favor contacta a: ayuda@alfredo-ec.com</p>
+</body>
+</html>
